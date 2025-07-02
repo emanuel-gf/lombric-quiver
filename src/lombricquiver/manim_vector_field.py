@@ -24,7 +24,6 @@ class TitleConfig:
     title_font_size: int = 36
     title_color: str = WHITE
 
-
 @dataclass
 class SubtitleConfig:
     """Configuration for subtitle display."""
@@ -153,7 +152,6 @@ class VectorFieldConfig:
         return missing
 
 
-
 class StreamPlot(Scene):
     """
     Manim Scene class for creating wind vector field animations.
@@ -179,6 +177,7 @@ class StreamPlot(Scene):
         if self.config.subtitle.show_suptitle:
             timestamp = pd.to_datetime(str(self.config.dataset['valid_time'].values))
             self.config.subtitle.suptitle_text = timestamp.strftime('%Y-%m-%d %H:%M:%S')
+            print(self.config.subtitle.suptitle_text)
         
         if self.config.colorbar.show:
             self._construct_colored_streamplot()
@@ -399,12 +398,13 @@ class StreamPlot(Scene):
                 color=self.config.subtitle.suptitle_color
             )
             
-            if title is not None:
-                suptitle.next_to(title, DOWN, buff=0.5)
-            else:
-                suptitle.to_edge(UP)
+            self.add(suptitle.next_to(vg_streamline,LEFT,buff=0.2))
             
-            self.add(suptitle)
+            # if title is not None:
+            #     suptitle.next_to(title, DOWN, buff=0.5)
+            # else:
+            #     suptitle.to_edge(LEFT)
+
     
     def _add_colorbar(self, vg_streamline: Group):
         """Add colorbar to the scene."""
@@ -415,8 +415,9 @@ class StreamPlot(Scene):
             
             # get width of group
             width_ = vg_streamline.width
-            colorbar_img.width = round(width_/10,1) # It width is 1/10 of the whole background width
             colorbar_img.height = vg_streamline.height
+            colorbar_img.width = 0.5 #round(width_/15,1) # It width is 1/15 of the whole background width
+            print('colorbar settings on scene',colorbar_img.width,colorbar_img.height)
             self.add(colorbar_img.next_to(vg_streamline, RIGHT, buff=0.04))
     
     def _animate_streamlines(self, stream_lines: StreamLines):
@@ -503,8 +504,7 @@ class StreamPlot(Scene):
         
         return wind_color_func       
 
-    
-    
+        
 class VectorFieldAnimation:
     """
     Main interface class for creating vector field animations.
@@ -563,7 +563,7 @@ class VectorFieldAnimation:
 
         """
         self.config.background_image_path = image_path
-        print("ok")
+        print("All good, background image path set to:", self.config.background_image_path)
         return self
     
     def get_background_image_path(self) -> Optional[Path]:
@@ -606,7 +606,14 @@ class VectorFieldAnimation:
         return self
     
     def configure_baseplot(self, **kwargs) -> 'VectorFieldAnimation':
-        """Configure base plot settings."""
+        """Configure the height of the baseplot to be exhibit in Manim Scene. Even though your image is created with
+        a certain height, it will be scaled in Manim to fit the canvas, which by default is 8.0 Manim Units. However
+        by configuring the baseplot height, you can change the height of the image in Manim scene
+        and it can never be bigger than the Manim Scene by itself.
+        
+        Parameters:
+        image_height: float
+            Height of the base plot image in Manim units. Default is 7.0."""
         for key, value in kwargs.items():
             if hasattr(self.config.baseplot, key):
                 setattr(self.config.baseplot, key, value)
