@@ -47,7 +47,7 @@ source .venv/bin/activate   -  macOS/Linux
 ```
 uv sync 
 ```
-Instead of, try 
+5. Install the library 
 ```
 uv pip install -e .
 ```
