@@ -30,7 +30,7 @@ git clone https://github.com/emanuel-gf/lombricquiver.git
 cd lombricquiver
 ```
 Clone and Setup
-bash# Clone the repository
+### Clone the repository
 git clone https://github.com/yourusername/lombricquiver.git
 cd lombricquiver
 
@@ -40,12 +40,11 @@ cd lombricquiver
 uv venv
 
 # Activate env
-source .venv/bin/activate  # macOS/Linux
-.venv\Scripts\activate     # Windows
+source .venv/bin/activate   -  macOS/Linux
 
-# Install the package in development mode
-## This install all dependencies 
-## try first
+.venv\Scripts\activate     -  Windows
+
+### Sync the environment to fetch requirements
 uv sync 
 
 ## Instead of, try 
