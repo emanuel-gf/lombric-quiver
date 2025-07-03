@@ -1,8 +1,8 @@
 site_name: lombricquiver
-site_url: https://emanuelgf.github.io/lombricquiver/
+site_url: https://emanuel-gf.github.io/lombric-quiver/
 site_author: Emanuel Goulart
 site_description: 'A documentation site for LombricQuiver, a tool for animations of Wind data.'
-repo_github: https://github.com/emanuelgf/lombricquiver
+repo_url: https://github.com/emanuel-gf/lombric-quiver
 copyright: 'Copyright © 2023 Emanuel Goulart'
 theme:
   name: cinder

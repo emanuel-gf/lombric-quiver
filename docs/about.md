@@ -38,6 +38,9 @@ uv venv
 ```
 
 3. Install lombricquiver for testing
+## Sync all dependencies 
+uv sync
+
 # Install lombricquiver
 uv pip install lombricquiver
 

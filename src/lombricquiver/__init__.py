@@ -16,7 +16,7 @@ Key features:
 - Vector Field and Streamline animation.
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Emanuel Goulart"
 
 #from era5_processor import ERA5Processor

@@ -45,6 +45,10 @@ source .venv/bin/activate  # macOS/Linux
 
 # Install the package in development mode
 ## This install all dependencies 
+## try first
+uv sync 
+
+## Instead of, try 
 uv pip install -e .
 
 3. Development Setup
