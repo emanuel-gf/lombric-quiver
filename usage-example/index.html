@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A documentation site for LombricQuiver, a tool for animations of Wind data.">
+    <meta name="author" content="Emanuel Goulart">
+    <link rel="canonical" href="https://emanuel-gf.github.io/lombric-quiver/usage-example/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Usage Examples - lombricquiver</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/material.min.css">
+        
+    
+    <link href="../stylesheets/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">lombricquiver</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../about/">About</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../getting-started/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../wrapper/">At Easy</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Usage Examples</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compare_matplotlib/">Comparison</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../api-reference/">API Reference</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="prev" href="../wrapper/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../compare_matplotlib/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/emanuel-gf/lombric-quiver/edit/master/docs/usage-example.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#usage-example">Usage Example</a></li>
+            <li class="second-level"><a href="#era5-processor">ERA5 Processor</a></li>
+                
+            <li class="second-level"><a href="#colorbar">Colorbar</a></li>
+                
+                <li class="third-level"><a href="#basic-matplotlib-palette">Basic Matplotlib Palette</a></li>
+                <li class="third-level"><a href="#custom-hex-color-palette">Custom Hex Color Palette</a></li>
+                <li class="third-level"><a href="#advanced-visualization">Advanced Visualization</a></li>
+                <li class="third-level"><a href="#integration-with-data-visualization">Integration with Data Visualization</a></li>
+            <li class="second-level"><a href="#base-plot">Base Plot</a></li>
+                
+            <li class="second-level"><a href="#vectorfield-animation">VectorField Animation</a></li>
+                
+                <li class="third-level"><a href="#basic-usage">Basic Usage</a></li>
+                <li class="third-level"><a href="#advanced-configuration">Advanced Configuration</a></li>
+                <li class="third-level"><a href="#configuration-inspection">Configuration Inspection</a></li>
+            <li class="second-level"><a href="#chaining-methods">Chaining Methods</a></li>
+                
+            <li class="second-level"><a href="#teste">teste</a></li>
+                
+            <li class="second-level"><a href="#usage-examples">Usage Examples</a></li>
+                
+                <li class="third-level"><a href="#basic-usage_1">Basic Usage</a></li>
+                <li class="third-level"><a href="#advanced-configuration_1">Advanced Configuration</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="usage-example">Usage Example</h1>
+<p>In order to exemplify the data processor, each module is exemplified below:</p>
+<h2 id="era5-processor">ERA5 Processor</h2>
+<pre><code class="language-python">import xarray as xr
+from era5_processor import ERA5DataProcessor
+
+# Load ERA5 dataset
+era5_data = xr.open_dataset('era5_data.nc')
+
+# Initialize processor
+processor = ERA5DataProcessor(
+    ds=era5_data,
+    variables=['u10', 'v10', 'msl'],  # 10m winds and mean sea level pressure
+    date_range=['2023-06-01', '2023-06-30'],
+    spatial_range={
+        'lat': [40, 60],    # Northern Europe
+        'lon': [-10, 30]    # Atlantic to Eastern Europe
+    },
+    convert_longitude=True,
+    include_attributes=True
+)
+
+# Process the data
+processor.process_data()
+
+# Calculate wind speed
+processor.calculate_wind_speed()
+
+# Get processed dataset
+full_data = processor.get_processed_data()
+
+# Extract specific timestep for plotting
+plot_data = processor.extract_components_by_given_timestep(
+    timestep=0,
+    extract_variables=['u10', 'v10', 'wind_speed'],
+    lat_long=True
+)
+
+# Create subsampled dataset for streamlines
+streamline_data = processor.subsample_data(step=3)
+</code></pre>
+<h2 id="colorbar">Colorbar</h2>
+<h4 id="basic-matplotlib-palette">Basic Matplotlib Palette</h4>
+<pre><code class="language-python">from colormap import ColorPalette
+
+# Create palette for wind speed visualization
+wind_palette = ColorPalette(
+    palette='viridis',
+    num_colors=50,
+    data_min=0,
+    data_max=25  # m/s
+)
+
+# Get discrete colors
+colors = wind_palette.get_hex_colors()
+
+# Map specific values
+calm_color = wind_palette.get_color_for_value(2)      # Light wind
+strong_color = wind_palette.get_color_for_value(20)   # Strong wind
+</code></pre>
+<h4 id="custom-hex-color-palette">Custom Hex Color Palette</h4>
+<pre><code class="language-python"># Define custom color scheme
+custom_colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D']
+
+temp_palette = ColorPalette(
+    palette=custom_colors,
+    num_colors=20,
+    data_min=-10,
+    data_max=40  # Temperature range in °C
+)
+
+# Extract interpolated colors
+temp_colors = temp_palette.get_hex_colors()
+</code></pre>
+<h4 id="advanced-visualization">Advanced Visualization</h4>
+<pre><code class="language-python"># Create and customize colorbar
+pressure_palette = ColorPalette(
+    palette='RdYlBu_r',
+    num_colors=100,
+    data_min=990,
+    data_max=1030  # hPa pressure range
+)
+
+# Save publication-ready colorbar
+pressure_palette.save_plot(
+    filename='pressure_colorbar.pdf',
+    dpi=300,
+    title='Sea Level Pressure (hPa)',
+    title_size=14,
+    label_size=12,
+    figsize=(2, 8),
+    width_ratio=0.7
+)
+</code></pre>
+<h4 id="integration-with-data-visualization">Integration with Data Visualization</h4>
+<pre><code class="language-python"># Use with matplotlib plotting
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create sample data
+data = np.random.uniform(0, 50, (100, 100))
+
+# Create palette
+palette = ColorPalette('plasma', num_colors=256, data_min=0, data_max=50)
+
+# Create plot with custom colormap
+fig, ax = plt.subplots()
+im = ax.imshow(data, cmap=palette._colormap, vmin=0, vmax=50)
+
+# Add colorbar
+cbar = plt.colorbar(im, ax=ax)
+cbar.set_label('Wind Speed (m/s)')
+</code></pre>
+<h2 id="base-plot">Base Plot</h2>
+<pre><code class="language-python">import cartopy.crs as ccrs
+import numpy as np
+
+# Basic usage with heatmap only
+data = {
+    'long': np.linspace(-10, 10, 100),
+    'lat': np.linspace(40, 60, 100), 
+    'wind_speed': np.random.rand(100, 100)
+}
+
+filename = create_layer_base(
+    dict_extract_var=data,
+    var_heatmap='wind_speed',
+    file_name='wind_heatmap.png',
+    cmap='viridis',
+    dpi=150
+)
+
+# Usage with streamlines
+import xarray as xr
+
+# Assuming you have a subsampled dataset for streamlines
+streamline_data = xr.Dataset({
+    'u10': (['latitude', 'longitude'], u_component_data),
+    'v10': (['latitude', 'longitude'], v_component_data),
+    'longitude': longitude_coords,
+    'latitude': latitude_coords
+})
+
+filename = create_layer_base(
+    dict_extract_var=data,
+    var_heatmap='wind_speed',
+    file_name='wind_with_streams.png',
+    stream_lines=True,
+    dataset_subsampled=streamline_data,
+    density=15,  # streamplot parameter
+    linewidth=0.6  # streamplot parameter
+)
+
+# Using different coordinate reference system
+filename = create_layer_base(
+    dict_extract_var=data,
+    crs_transform=ccrs.Mercator(),
+    file_name='mercator_projection.png'
+)
+</code></pre>
+<h2 id="vectorfield-animation">VectorField Animation</h2>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="language-python">import xarray as xr
+from your_library import VectorField_Animation
+
+# Load your ERA5 dataset
+dataset = xr.open_dataset('era5_wind_data.nc')
+
+# Initialize the animator
+animator = VectorField_Animation(
+    dataset=dataset,
+    background_image_path='map_background.png'
+)
+
+# Configure the animation
+animator.configure(
+    output_file='my_wind_animation',
+    quality='high_quality'
+).configure_title(
+    show_title=True,
+    title_text='Wind Flow Analysis'
+).configure_streamplot(
+    flow_speed=3.0,
+    color='BLUE'
+)
+
+# Render in notebook
+animator.render_to_notebook()
+</code></pre>
+<h3 id="advanced-configuration">Advanced Configuration</h3>
+<pre><code class="language-python"># Complex configuration with all options
+animator = VectorField_Animation() \
+    .set_dataset(dataset) \
+    .set_background_image('detailed_map.png') \
+    .configure(
+        output_file='detailed_wind_analysis',
+        pixel_width=1920,
+        pixel_height=1080,
+        quality='fourk_quality'
+    ) \
+    .configure_baseplot(
+        image_height=6.5
+    ) \
+    .configure_title(
+        show_title=True,
+        title_text='High Resolution Wind Analysis',
+        title_font_size=48,
+        title_color='YELLOW'
+    ) \
+    .configure_suptitle(
+        show_suptitle=True,
+        suptitle_font_size=28
+    ) \
+    .configure_streamplot(
+        delta_y=0.1,
+        resize_factor=0.02,
+        stroke_width=1.5,
+        flow_speed=4.0,
+        time_width=0.4,
+        animation_duration=5,
+        max_anchors_per_line=150,
+        color='CYAN',
+        virtual_time=6
+    )
+
+# Generate preview first
+animator.preview()
+
+# Then render full animation
+animator.render_to_notebook(display_mode='video')
+</code></pre>
+<h3 id="configuration-inspection">Configuration Inspection</h3>
+<pre><code class="language-python"># Get all configurations
+all_configs = animator.get_config()
+
+# Get specific section
+streamplot_config = animator.get_config('streamplot')
+print(f&quot;Current flow speed: {streamplot_config['flow_speed']}&quot;)
+
+# Modify and reapply
+streamplot_config['flow_speed'] = 5.0
+animator.configure_streamplot(**streamplot_config)
+</code></pre>
+<h2 id="chaining-methods">Chaining Methods</h2>
+<p>All configuration methods return <code>self</code>, enabling convenient method chaining for setup:</p>
+<pre><code class="language-python">animator.configure(quality='high_quality') \
+        .configure_title(show_title=True) \
+        .configure_streamplot(flow_speed=3.0) \
+        .render_to_notebook()
+</code></pre>
+<h2 id="teste">teste</h2>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="basic-usage_1">Basic Usage</h3>
+<pre><code class="language-python"># Create and configure animation
+animation = VectorFieldAnimation()
+animation.set_dataset(wind_dataset) \
+         .set_background_image(&quot;map.png&quot;) \
+         .configure_title(show_title=True, title_text=&quot;Wind Patterns&quot;) \
+         .configure_streamplot(flow_speed=3.0, animation_duration=5.0)
+
+# Check if ready and get scene class
+if animation.is_ready():
+    scene_class = animation.get_scene_class()
+else:
+    print(&quot;Missing:&quot;, animation.get_missing_requirements())
+</code></pre>
+<h3 id="advanced-configuration_1">Advanced Configuration</h3>
+<pre><code class="language-python">animation = VectorFieldAnimation()
+
+# Set up data and background
+animation.set_dataset(wind_data) \
+         .create_background_image(
+             extracted_data,
+             var_heatmap='wind_speed',
+             cmap='viridis',
+             dpi=300,
+             stream_lines=True,
+             dataset_subsampled=subsampled_data
+         )
+
+# Configure appearance
+animation.configure_title(
+    show_title=True,
+    title_text=&quot;Global Wind Patterns&quot;,
+    font_size=48,
+    title_color=&quot;BLUE&quot;
+).configure_subtitle(
+    show_suptitle=True,
+    suptitle_text=&quot;January 2024&quot;,
+    font_size=24
+).configure_streamplot(
+    delta_y=0.1,
+    flow_speed=2.5,
+    stroke_width=1.5,
+    color=&quot;YELLOW&quot;,
+    animation_duration=10.0
+).configure_colorbar(
+    palette='plasma',
+    num_colors=10,
+    data_min=0,
+    data_max=25
+)
+
+# Preview configuration
+config_summary = animation.preview_config()
+print(config_summary)
+
+# Generate scene
+scene_class = animation.get_scene_class()
+</code></pre></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright © 2023 Emanuel Goulart</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

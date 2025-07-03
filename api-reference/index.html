@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A documentation site for LombricQuiver, a tool for animations of Wind data.">
+    <meta name="author" content="Emanuel Goulart">
+    <link rel="canonical" href="https://emanuel-gf.github.io/lombric-quiver/api-reference/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>API Reference - lombricquiver</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/material.min.css">
+        
+    
+    <link href="../stylesheets/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">lombricquiver</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../about/">About</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../getting-started/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../wrapper/">At Easy</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../usage-example/">Usage Examples</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compare_matplotlib/">Comparison</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">API Reference</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="prev" href="../compare_matplotlib/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/emanuel-gf/lombric-quiver/edit/master/docs/api-reference.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#api-documentation">API Documentation</a></li>
+            <li class="second-level"><a href="#era5-processor">ERA5 Processor</a></li>
+                
+                <li class="third-level"><a href="#classes">Classes</a></li>
+                <li class="third-level"><a href="#methods">Methods</a></li>
+            <li class="second-level"><a href="#colormap">Colormap</a></li>
+                
+                <li class="third-level"><a href="#classes_1">Classes</a></li>
+                <li class="third-level"><a href="#methods_1">Methods</a></li>
+            <li class="second-level"><a href="#base-plot">Base Plot</a></li>
+                
+                <li class="third-level"><a href="#functions">Functions</a></li>
+            <li class="second-level"><a href="#vectorfieldanimation">VectorFieldAnimation</a></li>
+                
+                <li class="third-level"><a href="#class">Class</a></li>
+                <li class="third-level"><a href="#methods_2">Methods</a></li>
+            <li class="second-level"><a href="#technical-notes">Technical Notes</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="api-documentation">API Documentation</h1>
+<p>Lombricquiver is an aggregation of the following modules:</p>
+<ul>
+<li><a href="#era5-processor"><code>ERA5_Processor</code></a> - Retrieve and Pre-process geospatial data from ERA5.</li>
+<li><a href="#colormap"><code>Colormap</code></a> - Allow palette generation .</li>
+<li><a href="#vectorfieldanimation"><code>VectorFieldAnimation</code></a> - Creates the Scene and animate stream lines.</li>
+<li><a href="#base-plot"><code>Base plot</code></a> - Deals with background plots that belongs to the scene.</li>
+</ul>
+<h2 id="era5-processor"><strong>ERA5 Processor</strong></h2>
+<p>The ERA5_Processor module provides functionality for retrieving and pre-processing geospatial data from ERA5 datasets. It handles data filtering, coordinate transformations, variable extraction, and wind calculations.</p>
+<h3 id="classes">Classes</h3>
+<h4 id="era5dataprocessor"><code>ERA5DataProcessor</code></h4>
+<pre><code class="language-python">ERA5DataProcessor(
+    ds,
+    variables,
+    date_range,
+    spatial_range,
+    convert_longitude=True,
+    include_attributes=True
+)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ds</code></td>
+<td><code>xr.Dataset</code></td>
+<td><em>Required</em></td>
+<td>The source xarray dataset containing meteorological variables and coordinates</td>
+</tr>
+<tr>
+<td><code>variables</code></td>
+<td><code>dict</code> or <code>list</code></td>
+<td><em>Required</em></td>
+<td>Dictionary mapping source variable names to new names, or list of variable names to keep unchanged</td>
+</tr>
+<tr>
+<td><code>date_range</code></td>
+<td><code>list</code> or <code>tuple</code></td>
+<td><em>Required</em></td>
+<td>Date range for filtering: <code>[start_date, end_date]</code> in format <code>["YYYY-MM-DD", "YYYY-MM-DD"]</code></td>
+</tr>
+<tr>
+<td><code>spatial_range</code></td>
+<td><code>dict</code></td>
+<td><em>Required</em></td>
+<td>Spatial boundaries with keys <code>'lat': [min_lat, max_lat]</code> and <code>'lon': [min_lon, max_lon]</code></td>
+</tr>
+<tr>
+<td><code>convert_longitude</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Whether to convert longitude from 0-360° to -180° to 180°</td>
+</tr>
+<tr>
+<td><code>include_attributes</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Whether to copy variable attributes from the source dataset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li>
+<p><code>dataset</code>: Original dataset (copy of input)</p>
+</li>
+<li>
+<p><code>loaded_dataset</code>: Processed dataset with data loaded into memory</p>
+</li>
+<li>
+<p><code>variables</code>: Variable configuration</p>
+</li>
+<li>
+<p><code>date_range</code>: Date filtering range</p>
+</li>
+<li>
+<p><code>spatial_range</code>: Spatial filtering bounds</p>
+</li>
+<li>
+<p><code>convert_longitude</code>: Longitude conversion setting</p>
+</li>
+<li>
+<p><code>include_attributes</code>: Attribute copying setting</p>
+</li>
+</ul>
+<h3 id="methods">Methods</h3>
+<hr />
+<h4 id="process_data"><code>process_data()</code></h4>
+<p><em>Process Steps:</em></p>
+<ol>
+<li>Filter by date range using <code>valid_time</code> coordinate</li>
+<li>Select specified variables</li>
+<li>Convert longitude coordinates (if enabled)</li>
+<li>Sort by longitude</li>
+<li>Select spatial region of interest</li>
+<li>Load data into memory</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">processor = ERA5DataProcessor(
+    ds=era5_dataset,
+    variables=['u10', 'v10', 'msl'],
+    date_range=['2023-01-01', '2023-01-31'],
+    spatial_range={'lat': [35, 70], 'lon': [-15, 40]}
+)
+processor.process_data()
+</code></pre>
+<hr />
+<h4 id="extract_components_by_given_timestep"><strong><code>extract_components_by_given_timestep()</code></strong></h4>
+<p>Extracts a specific timestep for selected variables and returns them as a dictionary.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timestep</code></td>
+<td><code>int</code></td>
+<td><em>Required</em></td>
+<td>Time index to extract from the processed dataset</td>
+</tr>
+<tr>
+<td><code>extract_variables</code></td>
+<td><code>list</code> or <code>dict</code></td>
+<td><em>Required</em></td>
+<td>Variables to extract (list of names or dict mapping)</td>
+</tr>
+<tr>
+<td><code>lat_long</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Whether to include latitude and longitude coordinates in output</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong>
+- <code>Dict[str, xr.Dataset]</code>: Dictionary with variable names as keys and extracted data as values</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Extract first timestep
+timestep_data = processor.extract_components_by_given_timestep(
+    timestep=0,
+    extract_variables=['u10', 'v10', 'wind_speed'],
+    lat_long=True
+)
+# Returns: {'u10': data, 'v10': data, 'wind_speed': data, 'lat': coords, 'long': coords}
+</code></pre>
+<hr />
+<h4 id="calculate_wind_speed"><strong><code>calculate_wind_speed()</code></strong></h4>
+<p>Calculates wind speed magnitude from u and v wind components and adds it to the processed dataset.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u_component</code></td>
+<td><code>str</code></td>
+<td><code>'u10'</code></td>
+<td>Name of the east-west wind component variable</td>
+</tr>
+<tr>
+<td><code>v_component</code></td>
+<td><code>str</code></td>
+<td><code>'v10'</code></td>
+<td>Name of the north-south wind component variable</td>
+</tr>
+<tr>
+<td><code>new_var_name</code></td>
+<td><code>str</code></td>
+<td><code>'wind_speed'</code></td>
+<td>Name for the calculated wind speed variable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Calculation:</strong>
+Wind speed is calculated using: <code>sqrt(u² + v²)</code></p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Calculate wind speed from 10m wind components
+processor.calculate_wind_speed(
+    u_component='u10',
+    v_component='v10',
+    new_var_name='wind_speed_10m'
+)
+</code></pre>
+<hr />
+<h4 id="subsample_data"><strong><code>subsample_data()</code></strong></h4>
+<p>Creates a subsampled version of the processed dataset by taking every nth point.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>step</code></td>
+<td><code>int</code></td>
+<td><code>2</code></td>
+<td>Step size for subsampling (e.g., 2 takes every 2nd point)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong>
+- <code>xr.Dataset</code>: New subsampled dataset with reduced spatial resolution</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Create dataset with half the spatial resolution
+subsampled = processor.subsample_data(step=2)
+
+# More aggressive subsampling
+coarse_data = processor.subsample_data(step=4)
+</code></pre>
+<hr />
+<h4 id="get_processed_data"><strong><code>get_processed_data()</code></strong></h4>
+<p>Returns the fully processed dataset. This is the last step of the processing chain and returns a xr.Dataset.</p>
+<p><strong>Returns:</strong>
+- <code>xr.Dataset</code>: The processed dataset with all applied filters and calculations</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">processed_dataset = processor.get_processed_data()
+</code></pre>
+<hr />
+<h2 id="colormap">Colormap</h2>
+<p>The Colormap module provides functionality for palette generation and color management. It handles matplotlib colormaps, custom hex color arrays, and provides utilities for color extraction and visualization.</p>
+<h3 id="classes_1">Classes</h3>
+<h4 id="colorpalette"><code>ColorPalette</code></h4>
+<p>A comprehensive class for handling matplotlib color palettes and custom hex color arrays. It provides methods for color extraction, value-to-color mapping, and palette visualization.</p>
+<p><strong>Constructor:</strong></p>
+<pre><code class="language-python">ColorPalette(
+    palette,
+    num_colors=None,
+    data_min=None,
+    data_max=None
+)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>palette</code></td>
+<td><code>str</code>, <code>matplotlib.colors.Colormap</code>, or <code>list</code></td>
+<td><em>Required</em></td>
+<td>Color palette name (e.g., 'viridis', 'tab10'), colormap object, or list of hex color strings</td>
+</tr>
+<tr>
+<td><code>num_colors</code></td>
+<td><code>int</code></td>
+<td><code>None</code></td>
+<td>Number of colors to extract from the palette. Required for matplotlib palettes, defaults to list length for custom palettes</td>
+</tr>
+<tr>
+<td><code>data_min</code></td>
+<td><code>float</code></td>
+<td><code>0</code></td>
+<td>Minimum data value for color mapping</td>
+</tr>
+<tr>
+<td><code>data_max</code></td>
+<td><code>float</code></td>
+<td><code>num_colors</code></td>
+<td>Maximum data value for color mapping</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><code>palette</code>: The input palette specification</li>
+<li><code>num_colors</code>: Number of colors in the palette</li>
+<li><code>data_min</code>: Minimum value for data range</li>
+<li><code>data_max</code>: Maximum value for data range</li>
+<li><code>is_custom</code>: Boolean indicating if palette is custom hex colors</li>
+<li><code>_custom_colors</code>: List of custom hex colors (if applicable)</li>
+<li><code>_colormap</code>: Internal matplotlib colormap object</li>
+</ul>
+<h3 id="methods_1">Methods</h3>
+<h4 id="get_hex_colors"><code>get_hex_colors()</code></h4>
+<p>Extracts hex color strings from the palette.</p>
+<p><strong>Returns:</strong>
+- <code>list</code>: Array of hex color strings with length <code>num_colors</code></p>
+<p><strong>Behavior:</strong>
+- For custom palettes: Samples or interpolates from provided colors
+- For matplotlib palettes: Samples evenly across the colormap range
+- Handles cases where requested colors exceed available custom colors through interpolation</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Matplotlib palette
+palette = ColorPalette('viridis', num_colors=5)
+colors = palette.get_hex_colors()
+# Returns: ['#440154', '#31688e', '#35b779', '#fde725', ...]
+
+# Custom hex colors
+custom_palette = ColorPalette(['#FF5733', '#33FF57', '#5733FF'], num_colors=5)
+colors = custom_palette.get_hex_colors()
+# Returns: interpolated colors from the custom set
+</code></pre>
+<h4 id="get_color_for_value"><code>get_color_for_value()</code></h4>
+<p>Maps a specific data value to its corresponding hex color.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td><code>float</code></td>
+<td>The data value to map to a color</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong>
+- <code>str</code>: Hex color string corresponding to the normalized value</p>
+<p><strong>Normalization:</strong>
+- Values are normalized to [0, 1] range using <code>(value - data_min) / (data_max - data_min)</code>
+- Values outside the range are clamped to [0, 1]
+- Handles edge case where <code>data_max == data_min</code></p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">palette = ColorPalette('plasma', num_colors=100, data_min=0, data_max=50)
+
+# Get color for specific wind speed
+color_low = palette.get_color_for_value(5)    # Low wind speed
+color_high = palette.get_color_for_value(45)  # High wind speed
+color_mid = palette.get_color_for_value(25)   # Medium wind speed
+</code></pre>
+<h4 id="plot_palette"><code>plot_palette()</code></h4>
+<p>Creates a colorbar visualization of the palette with customizable appearance.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>figsize</code></td>
+<td><code>tuple</code></td>
+<td><code>(2, 8)</code></td>
+<td>Figure size as (width, height) in inches</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td><code>'m/s'</code></td>
+<td>Title/label for the colorbar</td>
+</tr>
+<tr>
+<td><code>title_size</code></td>
+<td><code>int</code></td>
+<td><code>12</code></td>
+<td>Font size for the title</td>
+</tr>
+<tr>
+<td><code>label_size</code></td>
+<td><code>int</code></td>
+<td><code>16</code></td>
+<td>Font size for tick labels</td>
+</tr>
+<tr>
+<td><code>width_ratio</code></td>
+<td><code>float</code></td>
+<td><code>0.8</code></td>
+<td>Width ratio of colorbar (larger = thinner bar)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong>
+- <code>matplotlib.figure.Figure</code>: The created figure object</p>
+<p><strong>Features:</strong>
+- Vertical orientation colorbar
+- Automatic normalization based on data range
+- Customizable spacing and typography
+- Extended colorbar with 'both' extend option</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Basic colorbar
+fig = palette.plot_palette(title='Wind Speed (m/s)')
+
+# Customized appearance
+fig = palette.plot_palette(
+    figsize=(3, 10),
+    title='Temperature (°C)',
+    title_size=14,
+    label_size=12,
+    width_ratio=0.6  # Wider colorbar
+)
+plt.show()
+</code></pre>
+<h4 id="save_plot"><code>save_plot()</code></h4>
+<p>Creates and saves a colorbar visualization to file.</p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">save_plot(
+    filename='colorbar',
+    dpi=300,
+    bbox_inches='tight',
+    **kwargs
+) -&gt; None
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>filename</code></td>
+<td><code>str</code></td>
+<td><code>'colorbar'</code></td>
+<td>Output filename (extension determines format)</td>
+</tr>
+<tr>
+<td><code>dpi</code></td>
+<td><code>int</code></td>
+<td><code>300</code></td>
+<td>Resolution for output image</td>
+</tr>
+<tr>
+<td><code>bbox_inches</code></td>
+<td><code>str</code></td>
+<td><code>'tight'</code></td>
+<td>Bounding box specification</td>
+</tr>
+<tr>
+<td><code>**kwargs</code></td>
+<td><code>dict</code></td>
+<td><code>{}</code></td>
+<td>Additional arguments passed to <code>plot_palette()</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supported Formats:</strong>
+- PNG, PDF, SVG, JPG, and other matplotlib-supported formats
+- Format determined by file extension</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Save with default settings
+palette.save_plot('wind_colorbar.png')
+
+# Save with custom settings
+palette.save_plot(
+    'temperature_scale.pdf',
+    dpi=150,
+    title='Temperature Scale',
+    figsize=(2.5, 12),
+    title_size=16
+)
+</code></pre>
+<h4 id="__repr__"><code>__repr__()</code></h4>
+<p>Provides string representation of the ColorPalette object.</p>
+<p><strong>Returns:</strong>
+- <code>str</code>: Descriptive string showing palette configuration</p>
+<hr />
+<h2 id="base-plot">Base Plot</h2>
+<p>The Base Plot module provides functionality for creating background plots and base layers for wind field data visualization.</p>
+<h3 id="functions">Functions</h3>
+<h4 id="create_layer_base"><code>create_layer_base</code></h4>
+<p>Creates a base layer for plotting with heatmap visualization and optional streamlines. The function generates a PNG file with specified dimensions suitable for use as a background layer in animations.</p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">create_layer_base(
+    dict_extract_var,
+    var_heatmap='wind_speed',
+    dpi=300,
+    height_inches=9,
+    file_name='base_layer.png',
+    crs_transform=ccrs.PlateCarree(),
+    cmap='plasma_r',
+    stream_lines=False,
+    dataset_subsampled=None,
+    **kwargs_streamplot
+)
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dict_extract_var</code></td>
+<td><code>dict</code></td>
+<td><em>Required</em></td>
+<td>Dictionary containing at least 'long', 'lat', and the variable to be plotted (e.g., 'wind_speed')</td>
+</tr>
+<tr>
+<td><code>var_heatmap</code></td>
+<td><code>str</code></td>
+<td><code>'wind_speed'</code></td>
+<td>The variable key from <code>dict_extract_var</code> to be used for the heatmap visualization</td>
+</tr>
+<tr>
+<td><code>dpi</code></td>
+<td><code>int</code></td>
+<td><code>300</code></td>
+<td>Dots per inch for the figure resolution</td>
+</tr>
+<tr>
+<td><code>height_inches</code></td>
+<td><code>int</code></td>
+<td><code>9</code></td>
+<td>Height of the figure in inches (designed to work with Manim canvas)</td>
+</tr>
+<tr>
+<td><code>file_name</code></td>
+<td><code>str</code></td>
+<td><code>'base_layer.png'</code></td>
+<td>Name of the output PNG file</td>
+</tr>
+<tr>
+<td><code>crs_transform</code></td>
+<td><code>cartopy.crs.Projection</code></td>
+<td><code>ccrs.PlateCarree()</code></td>
+<td>Coordinate reference system for the plot. Can be any valid Cartopy projection</td>
+</tr>
+<tr>
+<td><code>cmap</code></td>
+<td><code>str</code></td>
+<td><code>'plasma_r'</code></td>
+<td>Matplotlib colormap for the heatmap. See <a href="https://matplotlib.org/stable/gallery/color/colormap_reference.html">Matplotlib colormap reference</a></td>
+</tr>
+<tr>
+<td><code>stream_lines</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Whether to include streamlines in the plot</td>
+</tr>
+<tr>
+<td><code>dataset_subsampled</code></td>
+<td><code>xr.Dataset</code></td>
+<td><code>None</code></td>
+<td>xarray dataset containing subsampled data for streamlines. Required when <code>stream_lines=True</code></td>
+</tr>
+<tr>
+<td><code>**kwargs_streamplot</code></td>
+<td><code>dict</code></td>
+<td><code>{}</code></td>
+<td>Additional keyword arguments for the streamplot function (e.g., <code>density</code>, <code>linewidth</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Dictionary Keys:</strong></p>
+<p>The <code>dict_extract_var</code> parameter must contain:</p>
+<ul>
+<li><code>'long'</code>: Longitude coordinates</li>
+<li><code>'lat'</code>: Latitude coordinates  </li>
+<li><code>var_heatmap</code>: The variable specified in the <code>var_heatmap</code> parameter (default: <code>'wind_speed'</code>)</li>
+</ul>
+<p><strong>Streamline Dataset Requirements:</strong></p>
+<p>When <code>stream_lines=True</code>, the <code>dataset_subsampled</code> parameter must be an xarray Dataset containing:</p>
+<ul>
+<li><code>'longitude'</code>: Longitude coordinates</li>
+<li><code>'latitude'</code>: Latitude coordinates</li>
+<li><code>'u10'</code>: U-component of wind at 10m</li>
+<li><code>'v10'</code>: V-component of wind at 10m</li>
+</ul>
+<p><strong>Returns:</strong>
+- <code>str</code>: The filename of the saved PNG image</p>
+<p><strong>Example Usage:</strong></p>
+<pre><code class="language-python">import cartopy.crs as ccrs
+import numpy as np
+
+# Basic usage with heatmap only
+data = {
+    'long': np.linspace(-10, 10, 100),
+    'lat': np.linspace(40, 60, 100), 
+    'wind_speed': np.random.rand(100, 100)
+}
+
+filename = create_layer_base(
+    dict_extract_var=data,
+    var_heatmap='wind_speed',
+    file_name='wind_heatmap.png',
+    cmap='viridis',
+    dpi=150
+)
+
+# Usage with streamlines
+import xarray as xr
+
+# Assuming you have a subsampled dataset for streamlines
+streamline_data = xr.Dataset({
+    'u10': (['latitude', 'longitude'], u_component_data),
+    'v10': (['latitude', 'longitude'], v_component_data),
+    'longitude': longitude_coords,
+    'latitude': latitude_coords
+})
+
+filename = create_layer_base(
+    dict_extract_var=data,
+    var_heatmap='wind_speed',
+    file_name='wind_with_streams.png',
+    stream_lines=True,
+    dataset_subsampled=streamline_data,
+    density=15,  # streamplot parameter
+    linewidth=0.6  # streamplot parameter
+)
+
+# Using different coordinate reference system
+filename = create_layer_base(
+    dict_extract_var=data,
+    crs_transform=ccrs.Mercator(),
+    file_name='mercator_projection.png'
+)
+</code></pre>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The function automatically calculates the optimal aspect ratio based on the geographic extent of the data</li>
+<li>Latitude distortion is corrected using cosine correction for accurate aspect ratio calculation</li>
+<li>The output image dimensions are calculated to maintain geographic proportions</li>
+<li>The function includes coastlines, borders, and land features from Cartopy</li>
+<li>When using streamlines, white-colored streams are overlaid on the heatmap. This functionality is aimed to be a double-check of the wind results generated on VectorFieldAnimation module.</li>
+<li>The function uses <code>plt.tight_layout()</code> and <code>bbox_inches='tight'</code> for optimal spacing</li>
+<li>Final pixel dimensions and save confirmation are printed to console</li>
+</ul>
+<h2 id="vectorfieldanimation">VectorFieldAnimation</h2>
+<p>The <code>VectorFieldAnimation</code> class creates dynamic visualizations of wind data from ERA5 datasets by combining background images (<a href="#base-plot">Base Plot Module</a>) with animated streamlines representing wind flow patterns. It offers a clean, method-chaining interface for configuring various aspects of the animation including background images, streamlines, titles, and colorbars.</p>
+<h3 id="class">Class</h3>
+<pre><code class="language-python">class VectorFieldAnimation(dataset=None, background_image_path=None)
+
+</code></pre>
+<p>Initialize the animation configuration. The initialization above is one of the many ways to initialize the class, however, VectorFieldAnimatio provides methods to set the dataset and background, which is highly encourage to use. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dataset</code> ([xr.Dataset]): Xarray Dataset containing wind data.</li>
+<li><code>background_image_path</code> (Path[str]): Path to background image.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python"># Basic initialization
+animation = VectorFieldAnimation()
+
+# With initial dataset and background
+animation = VectorFieldAnimation(
+    dataset=wind_dataset,
+    background_image_path=&quot;background.png&quot;
+)
+
+## By using class methods.
+
+vf.set_dataset(your_dataset)
+
+# Create the background image and set under the hood
+vf.create_background_image(
+    dict_extract_var=dict_extract_var,
+    var_heatmap = 'wind_speed' 
+)
+</code></pre>
+<h3 id="methods_2">Methods</h3>
+<h4 id="dataset-management"><strong>Dataset Management</strong>:</h4>
+<h4 id="set_datasetdataset"><code>set_dataset(dataset)</code></h4>
+<p>Set the wind dataset for the animation.</p>
+<p><strong>Parameters:</strong>
+- <code>dataset</code> (xr.Dataset): xarray Dataset with: u10, v10, latitude, longitude variables</p>
+<h4 id="dataset"><code>dataset()</code></h4>
+<p>Get the current dataset.</p>
+<p><strong>Returns:</strong>
+- <code>Optional[xr.Dataset]</code>: The current dataset or None</p>
+<hr />
+<h4 id="background-image-management"><strong>Background Image Management</strong></h4>
+<h4 id="set_background_imageimage_path"><code>set_background_image(image_path)</code></h4>
+<p>Set the path to the background image.</p>
+<p><strong>Parameters:</strong>
+- <code>image_path</code> (str | Path): Relative path to the background image</p>
+<p><strong>Returns:</strong>
+- <code>VectorFieldAnimation</code>: Self for method chaining</p>
+<h4 id="get_background_image_path"><code>get_background_image_path()</code></h4>
+<p>Get the current background image path.</p>
+<p><strong>Returns:</strong>
+- <code>Optional[Path]</code>: The current background image path</p>
+<h4 id="create_background_imagedict_extract_var-kwargs"><code>create_background_image(dict_extract_var, **kwargs)</code></h4>
+<p>Generate a base image for the plot and set it as the background image. This method is the same as using the function present at the Base Plot module: <a href="#create_layer_base">create_layer_base</a></p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>dict_extract_var</code> (Dict): Dictionary containing 'long', 'lat', and variable data</li>
+<li><code>var_heatmap</code> (str): Variable for heatmap (default: 'wind_speed')</li>
+<li><code>cmap</code> (str): Colormap for heatmap (default: 'plasma_r')</li>
+<li><code>crs_transform</code> (cartopy.crs.Projection): Coordinate reference system (default: PlateCarree)</li>
+<li><code>dpi</code> (int): Resolution in dots per inch (default: 300)</li>
+<li><code>height_inches</code> (int): Figure height in inches (default: 7)</li>
+<li><code>stream_lines</code> (bool): Include streamlines (default: False)</li>
+<li><code>dataset_subsampled</code> (xr.Dataset): Subsampled data for streamlines (required if stream_lines=True)</li>
+<li><code>kwargs_streamplot</code>: Additional streamplot arguments</li>
+</ul>
+<hr />
+<h4 id="configuration-methods"><strong>Configuration Methods</strong></h4>
+<h4 id="configure_baseplot"><code>configure_baseplot()</code></h4>
+<p>Controls the height of the background image within Manim scene. </p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>image_height</code> (<code>float</code>, default: <code>7</code>): Height of the background image in Manim units. Should be less than the Manim canvas height (default is 8)</li>
+</ul>
+<h4 id="configure_titlekwargs"><code>configure_title(**kwargs)</code></h4>
+<p>Configure title display and styling.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>show_title</code> (bool): Whether to show title (default: False)</li>
+<li><code>title_text</code> (str): Title text (default: None)</li>
+<li><code>font_size</code> (int): Font size (default: 36)</li>
+<li><code>title_color</code> (ManimColor): Title color (default: WHITE)</li>
+</ul>
+<h4 id="configure_subtitlekwargs"><code>configure_subtitle(**kwargs)</code></h4>
+<p>Configure subtitle display and styling.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>show_suptitle</code> (bool): Whether to show subtitle (default: False)</li>
+<li><code>suptitle_text</code> (str): Subtitle text (default: None - uses date/time of wind data)</li>
+<li><code>font_size</code> (int): Font size</li>
+<li><code>suptitle_color</code> (ManimColor): Subtitle color (default: WHITE)</li>
+</ul>
+<p><strong>Returns:</strong>
+- <code>VectorFieldAnimation</code>: Self for method chaining</p>
+<h4 id="configure_streamplotkwargs"><code>configure_streamplot(**kwargs)</code></h4>
+<p>Configure streamline animation parameters. One of the cores of Lombricquiver library. It controls <strong>ALL</strong> aspects of the streamline animation behavior and appearance.</p>
+<pre><code class="language-python">animator.configure_streamplot(
+    delta_y=0.15,
+    resize_factor=0.05,
+    stroke_width=1.0,
+    flow_speed=2.0,
+    time_width=0.3,
+    animation_duration=3,
+    dt=0.01,
+    max_anchors_per_line=100,
+    color=&quot;WHITE&quot;,
+    virtual_time=4
+)
+</code></pre>
+<p><strong>Grid and Positioning:</strong></p>
+<ul>
+<li><strong>delta_y</strong> (<code>float</code>, default: <code>0.15</code>): Step size for the streamline grid placement. Larger values create more spacing between streamlines but reduce accuracy. Too small values can cause performance issues.
+Linspace of the x &amp; y axis. (default is 0.15). It is the step size for the linspace of the x and y axis. A component for placing the streamlines agents. As bigger the linspace, as more space the agents and less accuracy on placement. However, it is not recommended to set it too small, as it can lead to performance issues.</li>
+<li><strong>resize_factor</strong> (<code>float</code>, default: <code>0.05</code>): Proportion to resize the streamlines relative to the background image. A value of 0.05 means streamlines cover 95% of the image area</li>
+</ul>
+<p><strong>Visual Appearance:</strong></p>
+<ul>
+<li><strong>stroke_width</strong> (<code>float</code>, default: <code>1.0</code>): Width of the streamlines in Manim units</li>
+<li><strong>color</strong> (<code>str</code>, default: <code>"WHITE"</code>): Color of the streamlines</li>
+</ul>
+<p><strong>Animation Behavior:</strong></p>
+<ul>
+<li><strong>flow_speed</strong> (<code>float</code>, default: <code>2.0</code>):  Speed of the flow animation. It is the speed of the streamlines animation in Manim units per second.</li>
+<li><strong>time_width</strong> (<code>float</code>, default: <code>0.3</code>): Proportion of each streamline visible during animation (0.0 to 1.0)</li>
+<li><strong>animation_duration</strong> (<code>float</code>, default: <code>3</code>): Total duration to wait after animation starts (in seconds). This is applied to the Scene class method <code>wait()</code>. Which is the time the scene will wait after the animation has started. (default is 3). It is directly the duration of animation after the agents movents has started.</li>
+<li><strong>virtual_time</strong> (<code>float</code>, default: <code>4</code>): Total time agents move in the vector field. Higher values create longer streamlines. The time the agents get to move in the vector field. Higher values therefore result in longer stream lines
+            Virtual time for the animation (default is 4). This is computed at the Scene level, not on the construction method. Read Manim documentation for more details.</li>
+</ul>
+<p><strong>Technical Parameters:</strong></p>
+<ul>
+<li><strong>dt</strong> (<code>float</code>, default: <code>0.01</code>): Time step factor for agent movement. Lower values provide better trajectory approximation but may impact performance. A scalar to the amount the agent object is moved along the vector field. The actual distance is based on the magnitude of the vector field.
+            Therefore, it is the factor by which the distance an agent moves per step is stretched. Lower values result in a better approximation of the trajectories in the vector field.</li>
+<li><strong>max_anchors_per_line</strong> (<code>int</code>, default: <code>100</code>): Maximum number of anchor points per streamline. More anchors increase accuracy but may reduce performance. Maximum number of anchors per stream line (default is 100). It is the maximum number of anchors per stream line in the streamlines animation.
+            Manim creates anchors to position the streamlines agents. The more anchors, the more accurate the streamlines will be, but it can lead to performance issues.</li>
+</ul>
+<p>Note: 
+- All these parameters belongs to the class <a href="https://docs.manim.community/en/stable/reference/manim.mobject.vector_field.StreamLines.html">Streamline()</a>, which is a Manim MObject class. More details of its functioning can be retrieved at on the Manim Community.</p>
+<h4 id="configure_colorbarkwargs"><code>configure_colorbar(**kwargs)</code></h4>
+<p>Configure colorbar appearance and data mapping.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>palette</code> (str | matplotlib.colors.Colormap | list): Color palette/colormap</li>
+<li><code>num_colors</code> (int): Number of colors to extract from palette</li>
+<li><code>data_min</code> (float): Minimum data value (default: 0)</li>
+<li><code>data_max</code> (float): Maximum data value (default: num_colors)</li>
+</ul>
+<h4 id="utility-methods"><strong>Utility Methods</strong></h4>
+<h4 id="is_ready"><code>is_ready()</code></h4>
+<p>Check if the animation configuration is complete and ready for creation.</p>
+<h4 id="get_missing_requirements"><code>get_missing_requirements()</code></h4>
+<p>Get a list of missing configuration requirements.</p>
+<h4 id="get_scene_class"><code>get_scene_class()</code></h4>
+<p>Get a configured Scene class ready for Manim.</p>
+<h4 id="preview_config"><code>preview_config()</code></h4>
+<p>Get a preview of the current configuration.</p>
+<hr />
+<h2 id="technical-notes">Technical Notes</h2>
+<ul>
+<li>The class uses an internal <code>VectorFieldConfig</code> object to store configuration</li>
+<li>Background images are automatically saved as 'base_layer.png' when using <code>create_background_image()</code></li>
+<li>All configuration methods return <code>self</code> to enable method chaining</li>
+<li>The final scene class extends <code>StreamPlot</code> with the configured parameters</li>
+</ul>
+<p><strong>Coordinate System</strong>:</p>
+<ul>
+<li>The class automatically handles transformations between geographic coordinates (latitude/longitude) and Manim's screen coordinate system.</li>
+<li>Streamlines are automatically scaled and positioned to fit within the background image boundaries.</li>
+<li>Currently, there is a limitation regarding CRS transformation and polar plots. The library does not support transformations and the main CRS adopted is: ccrs.PlateCarree().Please few free to contribute to the project in case of implementing CRS transformations. </li>
+</ul>
+<p><strong>Performance Considerations</strong>:</p>
+<ul>
+<li>Lower <code>delta_y</code> values provide more detailed streamlines but require more computational resources! </li>
+<li>Higher <code>max_anchors_per_line</code> values increase accuracy but may slow rendering.</li>
+<li><code>dt</code> parameter affects both accuracy and performance - very small values may cause slowdowns.</li>
+</ul>
+<p><strong>Data Requirements</strong>:</p>
+<ul>
+<li>ERA5 datasets should have consistent coordinate naming (<code>latitude</code>, <code>longitude</code>, <code>u10</code>, <code>v10</code>, <code>valid_time</code>).</li>
+<li>Background images should have sufficient resolution for the desired output quality.</li>
+<li>Coordinate ranges in the dataset should match the geographic area shown in the background image.</li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright © 2023 Emanuel Goulart</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

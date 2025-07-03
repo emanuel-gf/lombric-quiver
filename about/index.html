@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A documentation site for LombricQuiver, a tool for animations of Wind data.">
+    <meta name="author" content="Emanuel Goulart">
+    <link rel="canonical" href="https://emanuel-gf.github.io/lombric-quiver/about/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>About - lombricquiver</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/material.min.css">
+        
+    
+    <link href="../stylesheets/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">lombricquiver</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">About</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../getting-started/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../wrapper/">At Easy</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../usage-example/">Usage Examples</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compare_matplotlib/">Comparison</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../api-reference/">API Reference</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="prev" href="..">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../getting-started/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/emanuel-gf/lombric-quiver/edit/master/docs/about.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#lombricquiver">Lombricquiver</a></li>
+            <li class="second-level"><a href="#installation">Installation</a></li>
+                
+                <li class="third-level"><a href="#prerequisites">Prerequisites</a></li>
+                <li class="third-level"><a href="#manim-system-requirements">Manim System Requirements</a></li>
+                <li class="third-level"><a href="#clone-and-install">Clone and Install</a></li>
+            <li class="second-level"><a href="#sync-all-dependencies">Sync all dependencies</a></li>
+                
+        <li class="first-level "><a href="#install-lombricquiver">Install lombricquiver</a></li>
+            <li class="second-level"><a href="#development">Development</a></li>
+                
+                <li class="third-level"><a href="#clone-and-install_1">Clone and Install</a></li>
+                <li class="third-level"><a href="#build-documentation">Build documentation</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="lombricquiver">Lombricquiver</h1>
+<p>An end-to-end Python library for vector field and streamline animations. 
+Integrate with Earth Data Hub and create seamless wind animations. </p>
+<p>If you would like to test and  run the examples, please consider the next steps.</p>
+<h2 id="installation">Installation</h2>
+<p>To build up the library we are using uv. In case uv is not installed in your computer, consider to install for easy management and fastness. </p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Python 3.12 or higher</li>
+<li><code>uv</code> package manager</li>
+</ul>
+<h3 id="manim-system-requirements">Manim System Requirements</h3>
+<p>The main core structure of lombricquiver is from Manim. To install the library properly, a few dependencies are necessar: ffmpeg and latex.</p>
+<p>On Windows:</p>
+<pre><code class="language-bash">winget install ffmpeg
+winget install latex
+</code></pre>
+<h3 id="clone-and-install">Clone and Install</h3>
+<ol>
+<li>Clone the repository</li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/emanuel-gf/lombricquiver.git
+cd lombricquiver
+</code></pre>
+<ol>
+<li>Create and activate virtual environment using uv</li>
+</ol>
+<pre><code class="language-bash">uv venv
+# On Windows:
+.venv\Scripts\activate
+</code></pre>
+<ol>
+<li>Install lombricquiver for testing</li>
+</ol>
+<h2 id="sync-all-dependencies">Sync all dependencies</h2>
+<p>uv sync</p>
+<h1 id="install-lombricquiver">Install lombricquiver</h1>
+<p>uv pip install lombricquiver</p>
+<ol>
+<li>If you are running for development -&gt;  Install dependencies and development packages </li>
+</ol>
+<pre><code class="language-bas">uv pip install lombriquiver .dev
+uv pip install -e &quot;.[dev,docs]&quot;
+uv pip install jupyter notebook ipykernel
+</code></pre>
+<ol>
+<li>Try it out
+Test the example file: quiver-plot for a more compreensive exploratory </li>
+</ol>
+<p>Note: To access ERA5 data, you'll need an Earth Data Hub API key. However, a single example dataset is provided. </p>
+<h2 id="development">Development</h2>
+<p>If you want to contribute or modify the code:</p>
+<h3 id="clone-and-install_1">Clone and Install</h3>
+<pre><code class="language-bash"># Get the code
+git clone https://github.com/emanuel-gf/lombricquiver.git
+cd lombricquiver
+
+# Setup development environment
+uv venv
+.venv\Scripts\activate
+uv pip install -e &quot;.[dev,docs]&quot;
+python -m ipykernel install --user --name=lombric-quiver
+</code></pre>
+<h3 id="build-documentation">Build documentation</h3>
+<p>```bash</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Copyright © 2023 Emanuel Goulart</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

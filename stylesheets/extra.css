@@ -1,0 +1,13 @@
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.image-row img {
+    width: 32%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
