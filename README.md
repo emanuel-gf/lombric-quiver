@@ -30,32 +30,29 @@ git clone https://github.com/emanuel-gf/lombricquiver.git
 cd lombricquiver
 ```
 Clone and Setup
-### Clone the repository
 git clone https://github.com/yourusername/lombricquiver.git
 cd lombricquiver
 
 2. Create and activate virtual environment
-
-# Create env
 uv venv
 
-# Activate env
+3. Activate env
 source .venv/bin/activate   -  macOS/Linux
 
 .venv\Scripts\activate     -  Windows
 
-### Sync the environment to fetch requirements
+4. Sync the environment to fetch requirements
 uv sync 
 
-## Instead of, try 
+Instead of, try 
 uv pip install -e .
 
-3. Development Setup
+5. Development Setup
 If you want to contribute or run tests:
-# Install with development dependencies
+Install with development dependencies
 uv pip install -e ".[dev]"
 
-# Run tests
+6. Run tests
 pytest
 
 
