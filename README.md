@@ -15,7 +15,7 @@ To build up the library we are using uv. In case uv is not installed in your com
 
 
 ### Manim System Requirements
-The main core structure of lombricquiver is from Manim. To install the library properly, a few dependencies are necessar: ffmpeg and latex.
+The main core structure of lombricquiver is from Manim. To install the library properly, a few dependencies are necessary: ffmpeg and latex.
 
 On Windows:
 ```bash
@@ -29,46 +29,33 @@ winget install latex
 git clone https://github.com/emanuel-gf/lombricquiver.git
 cd lombricquiver
 ```
+Clone and Setup
+bash# Clone the repository
+git clone https://github.com/yourusername/lombricquiver.git
+cd lombricquiver
 
-2. Create and activate virtual environment using uv
-```bash
+2. Create and activate virtual environment
+
+# Create env
 uv venv
-# On Windows:
-.venv\Scripts\activate
-```
 
-3. Install lombricquiver for testing
-# Install lombricquiver
-uv pip install lombricquiver
+# Activate env
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate     # Windows
 
-4. If you are running for development ->  Install dependencies and development packages 
-```bas
-uv pip install lombriquiver .dev
-uv pip install -e ".[dev,docs]"
-uv pip install jupyter notebook ipykernel
-```
-5. Try it out
-Test the example file: quiver-plot for a more compreensive exploratory 
+# Install the package in development mode
+## This install all dependencies 
+uv pip install -e .
+
+3. Development Setup
+If you want to contribute or run tests:
+# Install with development dependencies
+uv pip install -e ".[dev]"
+
+# Run tests
+pytest
 
 
 Note: To access ERA5 data, you'll need an Earth Data Hub API key. However, a single example dataset is provided. 
 
-## Development
 
-If you want to contribute or modify the code:
-
-### Clone and Install
-```bash
-# Get the code
-git clone https://github.com/emanuel-gf/lombricquiver.git
-cd lombricquiver
-
-# Setup development environment
-uv venv
-.venv\Scripts\activate
-uv pip install -e ".[dev,docs]"
-python -m ipykernel install --user --name=lombric-quiver
-```
-
-### Build documentation
-```bash
